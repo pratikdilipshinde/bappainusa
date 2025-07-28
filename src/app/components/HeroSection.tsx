@@ -17,35 +17,37 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="h-screen relative overflow-hidden flex items-center justify-end text-center"
+      className="h-screen relative overflow-hidden flex items-center justify-start text-center"
     >
+      {/* Left-Side Text */}
+      <motion.div
+        className="relative z-20 text-white ml-10 md:ml-28 px-4"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#da9d09] drop-shadow-2xl leading-normal">
+          Celebrate <br /> Ganesh Festival <br /> with BappaInUSA
+        </h1>
+        <p className="mt-4 text-lg md:text-xl text-[#d9d9d9] leading-loose drop-shadow-2xl">
+          Order Authentic Ganpati Idols <br /> — Delivered to Your Doorstep in the USA.
+        </p>
+      </motion.div>
+      
       {/* Zooming Background */}
       <motion.div
         className="absolute inset-0 bg-center bg-cover z-0"
         style={{
           backgroundImage: "url('/images/bg-ganpati.png')",
-          transform: `scale(${scale})`,
-          transition: 'transform 0.2s ease-out',
+          //transform: `scale(${scale})`,
+          //transition: 'transform 0.2s ease-out',
         }}
       />
 
       {/* Optional Overlay */}
       <div className="absolute inset-0 bg-black/30 z-10" />
 
-      {/* Right-Side Text */}
-      <motion.div
-        className="relative z-20 text-white mr-10 md:mr-28 px-4"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-orange-400 drop-shadow">
-          Celebrate <br /> Ganesh Festival <br /> with BappaInUSA
-        </h1>
-        <p className="mt-4 text-lg md:text-xl text-gray-100">
-          Order Authentic Ganpati Idols <br /> — Delivered to Your Doorstep in the USA.
-        </p>
-      </motion.div>
+      
     </section>
   );
 }

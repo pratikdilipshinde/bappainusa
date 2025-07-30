@@ -21,7 +21,7 @@ export default function HeroSection() {
     >
       {/* Left-Side Text */}
       <motion.div
-        className="relative z-20 text-white ml-10 md:ml-28 px-4"
+        className="relative z-20 text-white ml-10 md:ml-28 px-4 md:mb-0 mb-60"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -35,12 +35,19 @@ export default function HeroSection() {
       </motion.div>
       
       {/* Zooming Background */}
+      {/* Desktop Background Image */}
       <motion.div
-        className="absolute inset-0 bg-center bg-cover z-0"
+        className="hidden md:block absolute inset-0 bg-center bg-cover z-0"
         style={{
           backgroundImage: "url('/images/bg-ganpati.png')",
-          //transform: `scale(${scale})`,
-          //transition: 'transform 0.2s ease-out',
+        }}
+      />
+
+      {/* Mobile Background Image */}
+      <motion.div
+        className="block md:hidden absolute inset-0 bg-center bg-cover z-0"
+        style={{
+          backgroundImage: "url('/images/bg-ganpati-mob.png')", // your mobile version
         }}
       />
 

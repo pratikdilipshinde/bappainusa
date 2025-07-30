@@ -21,7 +21,7 @@ export default function HeroSection() {
     >
       {/* Left-Side Text */}
       <motion.div
-        className="relative z-20 text-white ml-10 md:ml-28 px-4 md:mb-0 mb-60"
+        className="relative z-20 text-white ml-[20%] md:ml-28 px-4 md:mb-0 mb-[40%]"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}

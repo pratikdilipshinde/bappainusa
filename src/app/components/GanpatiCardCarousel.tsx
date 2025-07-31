@@ -120,7 +120,7 @@ export default function GanpatiCardCarousel() {
           {idols.map((idol) => (
             <div
               key={idol.id}
-              className="min-w-[300px] max-w-[300px] bg-white rounded-xl shadow-md p-4 flex-shrink-0 hover:shadow-lg transition"
+              className="min-w-[300px] max-w-[300px] justify-center bg-white rounded-xl shadow-md p-4 flex-shrink-0 hover:shadow-lg transition"
             >
               <Image
                 src={idol.image}
@@ -131,8 +131,8 @@ export default function GanpatiCardCarousel() {
               />
               <h3 className="text-lg font-semibold text-orange-800 mt-4">{idol.name}</h3>
               <p className="text-sm text-gray-600">{idol.material}</p>
-              <p className="text-lg font-bold mt-2">{idol.price}</p>
-              <button className="mt-4 px-4 py-2 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition">
+              <p className="font-noto text-lg font-bold mt-2">{idol.price}</p>
+              <button className="mt-4 px-4 py-2 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition place-self-center">
                 Order Now
               </button>
             </div>

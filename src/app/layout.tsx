@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 //import { Geist, Geist_Mono } from "next/font/google";
-import { Berkshire_Swash } from "next/font/google";
+import { Berkshire_Swash, Noto_Sans } from "next/font/google";
 import "./globals.css";
 
 /*const geistSans = Geist({
@@ -13,11 +13,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });*/
 
-const berkshireSwash = Berkshire_Swash({
-  weight: "400",
-  variable: "--font-berkshire-swash-regular",
+const berkshire = Berkshire_Swash({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-berkshire',
   display: 'swap',
-  subsets: ["latin"]
+});
+
+const notoSans = Noto_Sans({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font-noto-sans',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -32,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={berkshireSwash.className}>
+      <body className={`${berkshire.variable} ${notoSans.variable} font-berkshire`}>
         {children}
       </body>
     </html>

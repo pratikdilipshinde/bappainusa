@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@layer utilities {
+  .font-berkshire {
+    font-family: var(--font-berkshire), cursive;
+  }
+
+  .font-noto {
+    font-family: var(--font-noto-sans), sans-serif;
+  }
+}

@@ -26,7 +26,7 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-3xl md:text-5xl font-extrabold text-[#da9d09] drop-shadow-2xl leading-normal">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-[#f1c104] drop-shadow-2xl leading-normal">
           Celebrate <br /> Ganesh Festival <br /> with BappaInUSA
         </h1>
         <p className="mt-4 text-lg md:text-xl text-[#d9d9d9] leading-loose drop-shadow-2xl">

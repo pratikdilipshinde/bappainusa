@@ -59,7 +59,7 @@ export default function ContactSection() {
           ></textarea>
           <button
             type="submit"
-            className="w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-6 rounded-full transition"
+            className="font-noto w-full bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-6 rounded-full transition"
           >
             Send Message
           </button>

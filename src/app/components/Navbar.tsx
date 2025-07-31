@@ -47,12 +47,31 @@ export default function Navbar() {
           </button>
 
           {menuOpen && (
-            <ul className={`mt-6 space-y-4 text-center font-medium ${
-                            scrolled ? 'text-orange-400' : 'text-gray-100'
-                        }`}>
-              <li><a href="#hero" onClick={() => setMenuOpen(false)}>Home</a></li>
-              <li><a href="#showcase" onClick={() => setMenuOpen(false)}>Idols</a></li>
-              <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
+            <ul
+              className={`mt-6 space-y-4 text-center font-medium ${
+                scrolled ? 'text-orange-400' : 'text-gray-100'
+              }`}
+            >
+              <li>
+                <Link href="/" onClick={() => setMenuOpen(false)}>
+                  Home
+                </Link>
+              </li>
+              {/* <li>
+                <Link href="#showcase" onClick={() => setMenuOpen(false)}>
+                  Idols
+                </Link>
+              </li> */}
+              <li>
+                <Link href="/GanpatiGallery" onClick={() => setMenuOpen(false)}>
+                  Gallery
+                </Link>
+              </li>
+              <li>
+                <Link href="#contact" onClick={() => setMenuOpen(false)}>
+                  Contact
+                </Link>
+              </li>
             </ul>
           )}
         </div>
@@ -60,30 +79,41 @@ export default function Navbar() {
         {/* Desktop view */}
         <div className="hidden md:flex items-center justify-between">
           {/* Left - Navigation */}
-            <h1 className="text-2xl font-bold text-orange-400 ">BappaInUSA</h1>
+          <h1 className="text-2xl font-bold text-orange-400">BappaInUSA</h1>
 
-            {/* Center - Image */}
-            <div className="flex-shrink-0">
+          {/* Center - Image */}
+          <div className="flex-shrink-0">
             <Link href="/">
-                <Image
-                src="/images/ShreeGaneshayNamah.png" // Replace with your image
+              <Image
+                src="/images/ShreeGaneshayNamah.png"
                 alt="Logo"
                 width={150}
                 height={150}
                 className="object-contain"
                 priority
-                />
+              />
             </Link>
-            </div>
+          </div>
 
-            {/* Right - More nav or empty */}
-            <ul className={`flex gap-6 font-medium ${
-                            scrolled ? 'text-orange-500' : 'text-gray-100'
-                        }`}>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#showcase">Idols</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+          {/* Right - Navigation */}
+          <ul
+            className={`flex gap-6 font-medium ${
+              scrolled ? 'text-orange-500' : 'text-gray-100'
+            }`}
+          >
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            {/* <li>
+              <Link href="#showcase">Idols</Link>
+            </li> */}
+            <li>
+              <Link href="/GanpatiGallery">Gallery</Link>
+            </li>
+            <li>
+              <Link href="#contact">Contact</Link>
+            </li>
+          </ul>
         </div>
       </div>
     </motion.nav>

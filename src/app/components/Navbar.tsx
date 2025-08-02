@@ -21,8 +21,8 @@ export default function Navbar() {
   return (
     <motion.nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md' : 'bg-transparent'
-      }`}
+        scrolled || menuOpen ? 'bg-white shadow-md' : 'bg-transparent'
+      } `}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
@@ -49,7 +49,7 @@ export default function Navbar() {
           {menuOpen && (
             <ul
               className={`mt-6 space-y-4 text-center font-medium ${
-                scrolled ? 'text-orange-400' : 'text-gray-100'
+                scrolled || menuOpen ? 'text-orange-400' : 'text-gray-100'
               }`}
             >
               <li>

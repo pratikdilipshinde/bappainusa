@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
               viewport={{ once: true }}
               className="p-6 bg-white rounded-xl shadow hover:shadow-xl transition"
             >
-              <div className="mb-4 place-self-center">{feature.icon}</div>
+              <div className="mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold text-orange-800">{feature.title}</h3>
               <p className="font-noto text-sm text-gray-600 mt-2">{feature.description}</p>
             </motion.div>

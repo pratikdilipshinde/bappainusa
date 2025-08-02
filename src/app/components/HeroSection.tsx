@@ -21,12 +21,12 @@ export default function HeroSection() {
     >
       {/* Left-Side Text */}
       <motion.div
-        className="relative z-20 text-white ml-[20%] md:ml-28 px-4 md:mb-0 mb-[40%]"
+        className="relative z-20 text-white mx-auto text-center md:ml-28 px-4 md:mb-0 mb-[40%]"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-3xl md:text-5xl font-extrabold text-[#f1c104] drop-shadow-2xl leading-normal">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-[#f1c104] drop-shadow-lg drop-shadow-amber-900 leading-normal">
           Celebrate <br /> Ganesh Festival <br /> with BappaInUSA
         </h1>
         <p className="mt-4 text-lg md:text-xl text-[#d9d9d9] leading-loose drop-shadow-2xl">
@@ -37,7 +37,7 @@ export default function HeroSection() {
       {/* Zooming Background */}
       {/* Desktop Background Image */}
       <motion.div
-        className="hidden md:block absolute inset-0 bg-center bg-cover z-0"
+        className="hidden md:block mx-auto absolute inset-0 bg-center bg-cover z-0"
         style={{
           backgroundImage: "url('/images/bg-ganpati.png')",
         }}

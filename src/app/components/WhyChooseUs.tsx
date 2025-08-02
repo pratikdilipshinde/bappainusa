@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
             >
               <div className="mb-4 place-self-center">{feature.icon}</div>
               <h3 className="text-xl font-semibold text-orange-800">{feature.title}</h3>
-              <p className="text-sm text-gray-600 mt-2">{feature.description}</p>
+              <p className="font-noto text-sm text-gray-600 mt-2">{feature.description}</p>
             </motion.div>
           ))}
         </div>

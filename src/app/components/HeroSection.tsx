@@ -29,7 +29,7 @@ export default function HeroSection() {
         <h1 className="text-3xl md:text-5xl font-extrabold text-[#f1c104] drop-shadow-lg drop-shadow-amber-900 leading-normal">
           Celebrate <br /> Ganesh Festival <br /> with BappaInUSA
         </h1>
-        <p className="mt-4 text-lg md:text-xl text-[#d9d9d9] leading-loose drop-shadow-2xl">
+        <p className="font-noto font-bold mt-4 text-lg md:text-xl text-[#d9d9d9] leading-loose drop-shadow-2xl">
           Order Authentic Ganpati Idols <br /> — Delivered to Your Doorstep in the USA.
         </p>
       </motion.div>

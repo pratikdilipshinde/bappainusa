@@ -132,7 +132,7 @@ export default function GanpatiCardCarousel() {
               <h3 className="text-lg font-semibold text-orange-800 mt-4">{idol.name}</h3>
               <p className="text-sm text-gray-600">{idol.material}</p>
               <p className="font-noto text-lg font-bold mt-2">{idol.price}</p>
-              <button className="mt-4 px-4 py-2 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition place-self-center">
+              <button className="font-noto cursor-pointer drop-shadow-amber-900 drop-shadow-md mt-4 px-4 py-2 bg-orange-600 text-white rounded-full hover:bg-orange-700 transition place-self-center">
                 Order Now
               </button>
             </div>
@@ -146,7 +146,7 @@ export default function GanpatiCardCarousel() {
           <button
             key={i}
             onClick={() => scrollTo(i)}
-            className={`h-3 w-3 rounded-full ${
+            className={`h-3 w-3 rounded-full drop-shadow-2xl ${
               i === selectedIndex ? 'bg-orange-600' : 'bg-gray-300'
             }`}
           />
@@ -155,8 +155,8 @@ export default function GanpatiCardCarousel() {
 
       {/* View More Button */}
       <div className="text-center mt-10">
-        <Link href="/ganpati-gallery">
-          <button className="bg-orange-600 text-white px-6 py-3 rounded-full hover:bg-orange-700 transition text-lg">
+        <Link href="/GanpatiGallery">
+          <button className="font-noto bg-orange-600 cursor-pointer drop-shadow-amber-900 drop-shadow-md font-bold text-white px-6 py-3 rounded-full hover:bg-orange-700 transition text-lg">
             View More
           </button>
         </Link>

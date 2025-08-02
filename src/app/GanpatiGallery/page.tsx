@@ -22,7 +22,7 @@ export default function GanpatiGalleryPage() {
   return (
     <>
         <Navbar />
-        <main className="min-h-screen bg-pink-900 py-12 px-4 pt-[7%]">
+        <main className="min-h-screen bg-pink-900 py-12 px-4 md:pt-[7%] pt-[30%]">
             <h1 className="text-4xl font-bold text-center text-orange-600 mb-10">
                 Ganpati Idols Gallery
             </h1>

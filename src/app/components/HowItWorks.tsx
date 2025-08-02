@@ -39,7 +39,7 @@ export default function HowItWorks() {
             >
               <div className="mb-4 place-self-center">{step.icon}</div>
               <h3 className="text-xl font-semibold text-orange-700">{step.title}</h3>
-              <p className="text-sm text-gray-600 mt-2">{step.description}</p>
+              <p className="font-noto text-sm text-gray-600 mt-2">{step.description}</p>
             </motion.div>
           ))}
         </div>

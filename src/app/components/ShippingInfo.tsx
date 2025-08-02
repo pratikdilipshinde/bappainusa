@@ -38,7 +38,7 @@ export default function ShippingInfo() {
             >
               <div className="mb-4 place-self-center">{item.icon}</div>
               <h3 className="text-xl font-semibold text-orange-700">{item.title}</h3>
-              <p className="text-sm text-gray-600 mt-2">{item.desc}</p>
+              <p className="font-noto text-sm text-gray-600 mt-2">{item.desc}</p>
             </motion.div>
           ))}
         </div>

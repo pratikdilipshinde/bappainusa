@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import { useState } from 'react';
 
 const idols = [
   { id: 1, name: 'Eco Friendly Idol', src: '/images/idols/idol1.png' },
@@ -19,9 +20,10 @@ const idols = [
 ];
 
 export default function GanpatiGalleryPage() {
+    const [isCartOpen, setCartOpen] = useState(false);
   return (
     <>
-        <Navbar />
+        <Navbar onCartClick={() => setCartOpen(true)} />
         <main className="min-h-screen bg-pink-900 py-12 px-4 md:pt-[7%] pt-[30%]">
             <h1 className="text-4xl font-bold text-center text-orange-600 mb-10">
                 Ganpati Idols Gallery

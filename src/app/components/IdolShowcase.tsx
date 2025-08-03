@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const idols = [
   {
@@ -43,7 +44,7 @@ export default function IdolShowcase() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <img
+              <Image
                 src={idol.image}
                 alt={idol.name}
                 className="w-full h-64 object-contain mb-4"

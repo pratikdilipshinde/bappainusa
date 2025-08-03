@@ -1,12 +1,30 @@
-    // /src/app/api/send-order/route.ts
+// /src/app/api/send-order/route.ts
 
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-export async function POST(req: Request) {
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  quantity?: number;
+}
+
+interface OrderRequestBody {
+  name: string;
+  email: string;
+  phone: string;
+  cart: CartItem[];
+}
+
+export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    const body: OrderRequestBody = await req.json();
     const { name, email, phone, cart } = body;
+
+    if (!name || !email || !phone || !cart || cart.length === 0) {
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    }
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -16,8 +34,11 @@ export async function POST(req: Request) {
       },
     });
 
-    const cartItemsHtml = cart?.map((item: any) =>
-      `<li><strong>${item.name}</strong> - ₹${item.price}</li>`).join('');
+    const cartItemsHtml = cart
+      .map(item =>
+        `<li><strong>${item.name}</strong> - ₹${item.price} (${item.quantity || 1})</li>`
+      )
+      .join('');
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
@@ -42,10 +63,10 @@ export async function POST(req: Request) {
 
     await transporter.sendMail(mailOptions);
     return NextResponse.json({ message: 'Email sent successfully' });
-
-  } catch (err: any) {
+  } catch (err) {
+    const error = err instanceof Error ? err : new Error('Unknown error');
     return NextResponse.json(
-      { error: 'Failed to send email: ' + err.message },
+      { error: 'Failed to send email: ' + error.message },
       { status: 500 }
     );
   }

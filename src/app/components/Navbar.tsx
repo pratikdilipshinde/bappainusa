@@ -5,10 +5,13 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { FaShoppingCart } from 'react-icons/fa';
+import { useCart } from './CartContext';
 
-export default function Navbar() {
+export default function Navbar({ onCartClick }: { onCartClick: () => void }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { cart } = useCart();
 
   useEffect(() => {
     const onScroll = () => {
@@ -72,6 +75,18 @@ export default function Navbar() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <button onClick={onCartClick} className="relative">
+                  <FaShoppingCart className={`text-xl ${
+                scrolled || menuOpen ? 'text-orange-400' : 'text-gray-100'
+              }`} />
+                  {cart.length > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                      {cart.length}
+                    </span>
+                  )}
+                </button>
+              </li>
             </ul>
           )}
         </div>
@@ -112,6 +127,18 @@ export default function Navbar() {
             </li>
             <li>
               <Link href="#contact">Contact</Link>
+            </li>
+            <li>
+              <button onClick={onCartClick} className="relative">
+                <FaShoppingCart className={`text-xl ${
+                scrolled || menuOpen ? 'text-orange-400' : 'text-gray-100'
+              }`}  />
+                {cart.length > 0 && (
+                  <span className="absolute -top-2 -right-3 bg-green-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center mx-auto my-auto justify-center ">
+                    {cart.length}
+                  </span>
+                )}
+              </button>
             </li>
           </ul>
         </div>

@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
@@ -9,12 +11,16 @@ import AboutSection from "./components/AboutSection";
 import ShippingInfo from "./components/ShippingInfo";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import { useState } from "react";
+import CartDrawer from "./components/CartDrawer";
 
 
 export default function Home() {
+  const [isCartOpen, setCartOpen] = useState(false);
+
   return (
     <>
-      <Navbar />
+      <Navbar onCartClick={() => setCartOpen(true)} />
       <HeroSection />
       <GanpatiCardCarousel />
       <WhyChooseUs />
@@ -23,6 +29,7 @@ export default function Home() {
       <ShippingInfo />
       <ContactSection />
       <Footer />
+      <CartDrawer open={isCartOpen} onClose={() => setCartOpen(false)} />
     </>
   );
 }

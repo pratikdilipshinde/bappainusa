@@ -9,7 +9,7 @@ type CartDrawerProps = {
 };
 
 export default function CartDrawer({ open, onClose }: CartDrawerProps) {
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeFromCart, clearCart } = useCart();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -37,8 +37,9 @@ export default function CartDrawer({ open, onClose }: CartDrawerProps) {
       });
 
       if (res.ok) {
-        alert('Order sent! We will contact you soon.');
+        alert('Your Order is placed! We will contact you soon.');
         onClose();
+        clearCart();
         setName('');
         setEmail('');
         setPhone('');

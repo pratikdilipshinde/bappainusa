@@ -40,7 +40,9 @@ export default function Navbar({ onCartClick }: { onCartClick: () => void }) {
             className="object-contain mb-2"
             priority
           />
-          <h1 className="text-xl font-bold text-orange-400">BappaInUSA</h1>
+          <Link href="/">
+            <h1 className="text-xl font-bold text-orange-400 cursor-pointer">BappaInUSA</h1>
+          </Link>
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -76,7 +78,7 @@ export default function Navbar({ onCartClick }: { onCartClick: () => void }) {
                 </Link>
               </li>
               <li>
-                <button onClick={onCartClick} className="relative">
+                <button onClick={onCartClick} className="relative cursor-pointer">
                   <FaShoppingCart className={`text-xl ${
                 scrolled || menuOpen ? 'text-orange-400' : 'text-gray-100'
               }`} />
@@ -94,7 +96,9 @@ export default function Navbar({ onCartClick }: { onCartClick: () => void }) {
         {/* Desktop view */}
         <div className="hidden md:flex items-center justify-between">
           {/* Left - Navigation */}
-          <h1 className="text-2xl font-bold text-orange-400">BappaInUSA</h1>
+          <Link href="/">
+            <h1 className="text-2xl font-bold text-orange-400 cursor-pointer">BappaInUSA</h1>
+          </Link>
 
           {/* Center - Image */}
           <div className="flex-shrink-0">
@@ -129,7 +133,7 @@ export default function Navbar({ onCartClick }: { onCartClick: () => void }) {
               <Link href="#contact">Contact</Link>
             </li>
             <li>
-              <button onClick={onCartClick} className="relative">
+              <button onClick={onCartClick} className="relative cursor-pointer">
                 <FaShoppingCart className={`text-xl ${
                 scrolled || menuOpen ? 'text-orange-400' : 'text-gray-100'
               }`}  />

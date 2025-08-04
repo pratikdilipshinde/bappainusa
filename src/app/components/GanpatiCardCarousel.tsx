@@ -5,13 +5,18 @@ import { useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCart } from './CartContext';
-import idols from '../data/idols.json';
+import allidols from '../data/idols.json';
 
 export default function GanpatiCardCarousel() {
   
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, slidesToScroll: 1 });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const { addToCart } = useCart();
+
+  // 🔥 Filter idols to keep only unique price values
+  const idols = Array.from(
+    new Map(allidols.map((idol) => [idol.price, idol])).values()
+  );
 
   const scrollTo = useCallback((index: number) => {
     if (emblaApi) emblaApi.scrollTo(index);
